@@ -1,27 +1,30 @@
 import PropTypes from 'prop-types'
+import  '../App.scss'
 import musicNote from '../assets/music-icon.png'
 import download from '../assets/download-white.png'
 import replay from '../assets/replay-white.png'
 import play from '../assets/play-white.png'
+import audio from '../assets/music/music.mp3'
 
 const MusicPlayer = ({image, alt, title, replayIcon, replayAlt, replayTitle, downloadIcon, downloadAlt, downloadTitle, playIcon, playAlt, playTitle}) =>{
     return(
         <div className="music-player">
             <div className="music-preview">
                 <img src={image} alt={alt} title={title} />
+                <audio id="music"  src={audio}></audio>
             </div>
             <div className="music-info">
                 <h4>Lofi Beats - 12 AM Studying Session</h4>
             </div>
 
             <div className="player-controls">
-                <img className="replay-icon" src={replayIcon} alt={replayAlt} title={replayTitle}/>
+                <img id="repeat" className="replay-icon" src={replayIcon} alt={replayAlt} title={replayTitle}/>
 
                 <div className="play-button">
-                <img className="play-icon" src={playIcon} alt={playAlt} title={playTitle}/>
+                <img id="play" className="play-icon" src={playIcon} alt={playAlt} title={playTitle}/>
                 </div>
 
-                <img className="download-icon" src={downloadIcon} alt={downloadAlt} title={downloadTitle}/>
+                <img id="download" className="download-icon" src={downloadIcon} alt={downloadAlt} title={downloadTitle}/>
             </div>
         </div>
     )
