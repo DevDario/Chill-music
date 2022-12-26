@@ -1,10 +1,68 @@
 import MusicPlayer from "./components/MusicPlayer";
 import MusicFlow from "./components/MusicFlow";
+import sunImage from './assets/sun.png'
+import moonImage from './assets/moon.png'
 
-function App() {
+function App() { 
+  const switchTheme = () =>{
+    const toggle = document.getElementById("toggle")
+    const toggleSun = document.getElementById("sun")
+    const toggleMoon = document.getElementById("moon")
+    const downloadIcon = document.getElementById("download")
+    const repeatIcon = document.getElementById("repeat")
+    const playIcon = document.getElementById("play")
+    const playButton = document.querySelector(".play-button")
+    //dark icons
+    const downloadDark = document.getElementById("downloadDark")
+    const repeatDark = document.getElementById("repeatDark")
+    const playDark = document.getElementById("playDark")
+
+    toggleSun.addEventListener('click',()=>{
+    sessionStorage.setItem("theme","light")
+    document.body.style.backgroundColor="#ffffff"
+    playButton.style.backgroundColor="#ffffff"
+    document.getElementById("music-player").style.backgroundColor="#ffffff"
+    document.getElementById("music-title").style.color="#141414"
+    toggle.style.transition="all 700ms ease"
+    toggle.style.transform="translateX(50px)"
+    toggleSun.style.display="none"
+    toggleMoon.style.display="flex"
+    downloadIcon.style.display="none"
+    downloadDark.style.display="block"
+    repeatIcon.style.display="none"
+    repeatDark.style.display="block"
+    playIcon.style.display="none"
+    playDark.style.display="block"
+    })
+
+    toggleMoon.addEventListener('click',()=>{
+    sessionStorage.setItem("theme","dark")
+    document.body.style.backgroundColor="#141414"
+    playButton.style.backgroundColor="#454545"
+    document.getElementById("music-player").style.backgroundColor="#141414"
+    document.getElementById("music-title").style.color="#ffffff"
+    toggle.style.transition="all 700ms ease"
+    toggle.style.transform="translateX(0px)"
+    toggleSun.style.display="flex"
+    toggleMoon.style.display="none"
+    downloadIcon.style.display="flex"
+    downloadDark.style.display="none"
+    repeatIcon.style.display="flex"
+    repeatDark.style.display="none"
+    playIcon.style.display="flex"
+    playDark.style.display="none"
+    })
+  }
+
   return (
     <div className="App">
         <MusicPlayer />
+        <div className="switch-theme">
+          <button className="switch-toggle" id="toggle">
+              <img id="sun" onClick={switchTheme} className="toggle-image" src={sunImage} alt="Switch Theme" title="Switch theme" />
+              <img id="moon" onClick={switchTheme} className="toggle-image" src={moonImage} alt="Switch Theme" title="Switch theme" />
+          </button>
+        </div>
 
           <div className="aside">
               <ul>

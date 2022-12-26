@@ -100,11 +100,45 @@ $pink:#e4239a;
 }
 
 
+#moon,
+#repeatDark,
+#downloadDark,
+#playDark{
+    display:none;
+}
+
 .App{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
+.switch-theme{
+    border: .90px solid $border-color;
+    width: 85px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: $card-color;
+
+    .switch-toggle{
+        align-self:center;
+        border:.80px solid $border-color;
+        border-radius: 15px;
+        background-color: $dark-color;
+        vertical-align: middle;
+        height: 29px;
+        cursor: pointer;
+
+        img{
+            width: 22px;
+            height: 22px;
+            align-self:center;
+        }
+    }
+}
+
+
+
 .aside{
     position:absolute;
     display:flex;
