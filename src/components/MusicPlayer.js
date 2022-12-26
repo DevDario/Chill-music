@@ -8,26 +8,39 @@ import play from '../assets/play-white.png'
 import downloadDark from '../assets/download-dark.png'
 import replayDark from '../assets/replay-dark.png'
 import playDark from '../assets/play-dark.png'
-import audio from '../assets/music/music.mp3'
+//music
+import myAudio from '../assets/music/music.mp3'
 
 const MusicPlayer = ({image, alt, title, replayIcon, replayAlt, replayTitle, downloadIcon, downloadAlt, downloadTitle, playIcon, playAlt, playTitle}) =>{
+
+    const playAudio = () =>{
+        const audio = new Audio (myAudio)
+        audio.play()
+    }
+
+    const replayAudio = () =>{
+        const audio = new Audio (myAudio)
+        audio.currentTime=0
+        audio.play()
+    }
+
     return(
         <div className="music-player" id="music-player">
             <div className="music-preview">
                 <img src={image} alt={alt} title={title} />
-                <audio id="music"  src={audio}></audio>
+                <audio id="music" src={myAudio}></audio>
             </div>
             <div className="music-info">
                 <h4 id="music-title">Lofi Beats - 12 AM Studying Session</h4>
             </div>
 
             <div className="player-controls">
-                <img id="repeat" className="replay-icon" src={replayIcon} alt={replayAlt} title={replayTitle}/>
-                <img id="repeatDark" className="replay-icon" src={replayDark} alt={replayAlt} title={replayTitle}/>
+                <img id="repeat" className="replay-icon" onClick={replayAudio} src={replayIcon} alt={replayAlt} title={replayTitle}/>
+                <img id="repeatDark" className="replay-icon" onClick={replayAudio} src={replayDark} alt={replayAlt} title={replayTitle}/>
 
                 <div className="play-button">
-                <img id="play" className="play-icon" src={playIcon} alt={playAlt} title={playTitle}/>
-                <img id="playDark" className="play-icon" src={playDark} alt={playAlt} title={playTitle}/>
+                <img id="play" className="play-icon" onClick={playAudio} src={playIcon} alt={playAlt} title={playTitle}/>
+                <img id="playDark" className="play-icon" onClick={playAudio} src={playDark} alt={playAlt} title={playTitle}/>
                 </div>
 
                 <img id="download" className="download-icon" src={downloadIcon} alt={downloadAlt} title={downloadTitle}/>
