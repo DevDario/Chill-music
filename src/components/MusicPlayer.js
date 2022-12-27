@@ -15,7 +15,7 @@ import myAudio from '../assets/music/music.mp3'
 // the object that contains the music
 const audio = new Audio (myAudio)
 
-const MusicPlayer = ({image, alt, title, replayIcon, replayAlt, replayTitle, downloadIcon, downloadAlt, downloadTitle, playIcon, playAlt, playTitle}) =>{
+const MusicPlayer = ({image, alt, title, replayIcon, replayAlt, replayTitle, downloadIcon, downloadAlt, downloadTitle, playIcon, playAlt, playTitle, pauseAlt, pauseTitle}) =>{
 
     const playAudio = () =>{
         const playButton = document.getElementById('play')
@@ -26,7 +26,6 @@ const MusicPlayer = ({image, alt, title, replayIcon, replayAlt, replayTitle, dow
 
         if(currentTheme==="dark"){
             playButton.style.display="none"
-            playDarkButton.style.display="none"
             pauseButton.style.display="flex"
         }else{
             if(currentTheme==="light")
@@ -46,7 +45,7 @@ const MusicPlayer = ({image, alt, title, replayIcon, replayAlt, replayTitle, dow
 
         if(currentTheme==="dark"){
             playButton.style.display="none"
-            //playDarkButton.style.display="none"
+            playDarkButton.style.display="none"
             pauseButton.style.display="flex"
         }else{
             if(currentTheme==="light")
@@ -95,8 +94,8 @@ const MusicPlayer = ({image, alt, title, replayIcon, replayAlt, replayTitle, dow
                 <div className="play-button">
                 <img id="play" className="play-icon" onClick={playAudio} src={playIcon} alt={playAlt} title={playTitle}/>
                 <img id="playDark" className="play-icon" onClick={playAudio} src={playDark} alt={playAlt} title={playTitle}/>
-                <img id="pauseDark" className="pause-icon" onClick={pauseAudio} src={pauseDark} alt={playAlt} title={playTitle}/>
-                <img id="pause" className="pause-icon" onClick={pauseAudio} src={pause} alt={playAlt} title={playTitle}/>
+                <img id="pauseDark" className="pause-icon" onClick={pauseAudio} src={pauseDark} alt={pauseAlt} title={pauseTitle}/>
+                <img id="pause" className="pause-icon" onClick={pauseAudio} src={pause} alt={pauseAlt} title={pauseTitle}/>
                 </div>
 
                 <img id="download" className="download-icon" src={downloadIcon} alt={downloadAlt} title={downloadTitle}/>
