@@ -2,6 +2,8 @@ import MusicPlayer from "./components/MusicPlayer";
 import MusicFlow from "./components/MusicFlow";
 import sunImage from './assets/sun.png'
 import moonImage from './assets/moon.png'
+//default theme
+sessionStorage.setItem("theme","dark")
 
 function App() { 
   const switchTheme = () =>{
@@ -12,10 +14,12 @@ function App() {
     const repeatIcon = document.getElementById("repeat")
     const playIcon = document.getElementById("play")
     const playButton = document.querySelector(".play-button")
+    const pauseButton = document.getElementById('pause')
     //dark icons
     const downloadDark = document.getElementById("downloadDark")
     const repeatDark = document.getElementById("repeatDark")
     const playDark = document.getElementById("playDark")
+    const pauseDarkButton = document.getElementById('pauseDark')
 
     toggleSun.addEventListener('click',()=>{
     sessionStorage.setItem("theme","light")
@@ -32,7 +36,9 @@ function App() {
     repeatIcon.style.display="none"
     repeatDark.style.display="block"
     playIcon.style.display="none"
-    playDark.style.display="block"
+    playDark.style.display="none"
+    pauseButton.style.display="none"
+    pauseDarkButton.style.display="block"
     })
 
     toggleMoon.addEventListener('click',()=>{
@@ -43,14 +49,16 @@ function App() {
     document.getElementById("music-title").style.color="#ffffff"
     toggle.style.transition="all 700ms ease"
     toggle.style.transform="translateX(0px)"
-    toggleSun.style.display="flex"
+    toggleSun.style.display="block"
     toggleMoon.style.display="none"
-    downloadIcon.style.display="flex"
+    downloadIcon.style.display="block"
     downloadDark.style.display="none"
-    repeatIcon.style.display="flex"
+    repeatIcon.style.display="block"
     repeatDark.style.display="none"
-    playIcon.style.display="flex"
+    playIcon.style.display="none"
     playDark.style.display="none"
+    pauseButton.style.display="block"
+    pauseDarkButton.style.display="none"
     })
   }
 
