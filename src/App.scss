@@ -23,7 +23,7 @@ $pink:#e4239a;
     border-radius: 1.2rem;
     background-color: $card-color;
     border:.8px solid $border-color;
-    box-shadow:2px 2px rgba(8, 8, 8, 0.705);
+    box-shadow:2px 2px rgba(8, 8, 8, 0.11);
 }
 
 
@@ -46,7 +46,7 @@ $pink:#e4239a;
         height: 250px;
         border-radius: .60rem;
         border:.8px solid $border-color;
-        box-shadow:2px 2px rgba(8, 8, 8, 0.192);
+        box-shadow:2px 2px rgba(8, 8, 8, 0.089);
         margin:40px auto 25px auto;
 
         img{
@@ -228,4 +228,89 @@ $pink:#e4239a;
         transform:translateX(2px);
     }
 
+}
+
+//Mobile Version
+@media screen and (max-width:768px) {
+
+    body{
+        padding: 0;
+    }
+
+    .music-player{   
+        margin:0 auto; 
+        width: 100%;
+        border-radius: 0;
+        .music-preview{
+            width: 80%;
+            height: 250px;
+            border-radius: .60rem;
+            border:.8px solid $border-color;
+            box-shadow:2px 2px rgba(8, 8, 8, 0.192);
+            margin:40px auto 25px auto;
+    
+            img{
+                width:110px;
+                height:110px;
+                align-self:center;
+            }
+        }
+    
+        .music-info{
+            display:flex;
+            flex-direction:column;
+            align-self:center;
+    
+            h4{
+                color:$light-color;
+                font-size: 17px;
+                text-align: center;
+            }
+        }
+    
+        .player-controls{
+            position:absolute;
+            bottom: 7%;
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            gap:30px;
+            align-self:center;
+    
+            img{
+                width: 40px;
+                height: 40px;
+                cursor:pointer;
+                align-self:center;
+                align-content:center;
+            }
+    
+            .play-button{
+                display:flex;
+                flex-direction:column;
+                justify-content: center;
+                background-color: $border-color;
+                border:.60px solid #454545;
+                box-shadow:2px 2px rgba(8, 8, 8, 0.192);
+                width: 70px;
+                height: 70px;
+                border-radius: 100%;
+                align-content:center;
+            }
+        }
+    }
+
+    .music-flow,
+    .aside{
+        display: none;
+    }
+
+    .App{
+        flex-direction: column;
+        gap:10px;
+    }
+
+    .switch-theme{
+        margin:0 auto;
+    }    
 }
