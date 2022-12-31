@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Chill Music
+Is a simple music player developed with <img src="https://img.shields.io/badge/Sass-20232A?style=for-the-badge&logo=sass&logoColor=61DAFB"/> and <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
