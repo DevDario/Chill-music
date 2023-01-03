@@ -45,7 +45,7 @@ function App() {
     sessionStorage.setItem("theme","dark")
     document.body.style.backgroundColor="#141414"
     playButton.style.backgroundColor="#454545"
-    document.getElementById("music-player").style.backgroundColor="#141414"
+    document.getElementById("music-player").style.backgroundColor="#252525"
     document.getElementById("music-title").style.color="#ffffff"
     toggle.style.transition="all 700ms ease"
     toggle.style.transform="translateX(0px)"
